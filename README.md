@@ -16,12 +16,12 @@ wso2mb-3.0.0/client-lib to wso2esb-4.9.0/repository/components/lib/
   - You can use message pull mediator in proxy service. Please note that you must set MANDATORY properties
 before calling class mediator in mediation flow. Those properties are,
 
- brokerHost 
- brokerPort 
- brokerUsername 
- brokerPassword 
- brokerDestinationName 
- brokerDestinationType 
+ brokerHost  
+ brokerPort  
+ brokerUsername  
+ brokerPassword  
+ brokerDestinationName  
+ brokerDestinationType  
  subscriptionId (Mandatory only if you want pull messages from durable topic) 
 
 Below is the sample proxy service used to invoke message pull mediator.
