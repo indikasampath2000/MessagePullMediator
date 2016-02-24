@@ -4,28 +4,29 @@ Supported JDK version 1.7 or higher
 
 Message pull mediator connect to WSO2 message broker and pull message from queue/durable topic on-demand.
 
-1. Installation
-- Build the project and copy message-pull-mediator-1.0.0.jar to wso2esb-4.9.0/repository/components/lib/
-- Copy andes-client-3.0.1.jar, geronimo-jms_1.1_spec-1.1.0.wso2v1.jar, org.wso2.securevault-1.0.0-wso2v2.jar from
+ 1. Installation
+  - Build the project and copy message-pull-mediator-1.0.0.jar to wso2esb-4.9.0/repository/components/lib/
+  - Copy andes-client-3.0.1.jar, geronimo-jms_1.1_spec-1.1.0.wso2v1.jar, org.wso2.securevault-1.0.0-wso2v2.jar from
 wso2mb-3.0.0/client-lib to wso2esb-4.9.0/repository/components/lib/
-- Add below entry to  wso2esb-4.9.0/repository/conf/log4j.properties file
+  - Add below entry to  wso2esb-4.9.0/repository/conf/log4j.properties file
   log4j.logger.org.wso2.andes.client.AMQConnectionDelegate_8_0=ERROR
-- Start wso2esb-4.9.0
+  - Start wso2esb-4.9.0
 
-2. Invoke mediator
-- You can use message pull mediator in proxy service. Please note that you must set MANDATORY properties
+ 2. Invoke mediator
+  - You can use message pull mediator in proxy service. Please note that you must set MANDATORY properties
 before calling class mediator in mediation flow. Those properties are,
 
- brokerHost
- brokerPort
- brokerUsername
- brokerPassword
- brokerDestinationName
- brokerDestinationType
- subscriptionId (Mandatory only if you want pull messages from durable topic)
+ brokerHost 
+ brokerPort 
+ brokerUsername 
+ brokerPassword 
+ brokerDestinationName 
+ brokerDestinationType 
+ subscriptionId (Mandatory only if you want pull messages from durable topic) 
 
 Below is the sample proxy service used to invoke message pull mediator.
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <proxy xmlns="http://ws.apache.org/ns/synapse"
        name="MessagePullProxy"
@@ -55,6 +56,7 @@ Below is the sample proxy service used to invoke message pull mediator.
    </target>
    <description/>
 </proxy>
+```
 
 In above proxy service, values taken from custom transport headers. You can use query parameter or request payload
 based on the requirement.
